@@ -1,8 +1,8 @@
 #include <iostream>
-int Static[5];
+int Static[101];
 int memcheckFailDemo(int* arrayStack, unsigned int arrayStackLen, 
 	int* arrayHeap, unsigned int arrayHeapLen) {
-  int Stack[5];
+  int Stack[101];
 
   Static[100] = 0; 
   Stack[100] = 0; 
@@ -11,9 +11,10 @@ int memcheckFailDemo(int* arrayStack, unsigned int arrayStackLen,
 
   int* array = new int[5];
   array[100] = 0; 
-
+if (100 <= arrayStackLen){
   arrayStack[100] = 0; 
   arrayHeap[100] = 0; 
+}
 
   for (unsigned int i = 0; i <= arrayStackLen; i++) {
       arrayStack[i] = 0;
